@@ -14,7 +14,8 @@ struct My_MoviesApp: App {
 
     init() {
         let appState = AppState.populatedWithSampleData()
-        let appContext = AppContext(apiKey: "XXXXX", appState: appState)
+        let apiKey = Secrets().get(named: "apiKey")
+        let appContext = AppContext(apiKey: apiKey, appState: appState)
 
         self.appContext = appContext
     }

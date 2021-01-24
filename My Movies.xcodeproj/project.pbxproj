@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463EC8CD25BDCB4E00C18F94 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463EC8CC25BDCB4E00C18F94 /* Secrets.swift */; };
+		463EC8D525BDCD9B00C18F94 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 463EC8D425BDCD9B00C18F94 /* Secrets.plist */; };
 		46E8615225BC4EB500BF855B /* My_MoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8615125BC4EB500BF855B /* My_MoviesApp.swift */; };
 		46E8615425BC4EB500BF855B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8615325BC4EB500BF855B /* ContentView.swift */; };
 		46E8615625BC4EB600BF855B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E8615525BC4EB600BF855B /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		463EC8CC25BDCB4E00C18F94 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		463EC8D425BDCD9B00C18F94 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		46E8614E25BC4EB500BF855B /* My Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E8615125BC4EB500BF855B /* My_MoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_MoviesApp.swift; sourceTree = "<group>"; };
 		46E8615325BC4EB500BF855B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463EC8CB25BDCB0000C18F94 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				463EC8CC25BDCB4E00C18F94 /* Secrets.swift */,
+				463EC8D425BDCD9B00C18F94 /* Secrets.plist */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		46E8614525BC4EB500BF855B = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 				46E8615525BC4EB600BF855B /* Assets.xcassets */,
 				46E8615A25BC4EB600BF855B /* Info.plist */,
 				46E8615725BC4EB600BF855B /* Preview Content */,
+				463EC8CB25BDCB0000C18F94 /* Utilities */,
 			);
 			path = "My Movies";
 			sourceTree = "<group>";
@@ -313,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E8615925BC4EB600BF855B /* Preview Assets.xcassets in Resources */,
+				463EC8D525BDCD9B00C18F94 /* Secrets.plist in Resources */,
 				46E8615625BC4EB600BF855B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +363,7 @@
 				46E861BC25BCA68B00BF855B /* RecentReleasesService.swift in Sources */,
 				46EABE6825BD0B6B0081D36B /* MovieDetailView.swift in Sources */,
 				46E8618C25BC67EF00BF855B /* AppState.swift in Sources */,
+				463EC8CD25BDCB4E00C18F94 /* Secrets.swift in Sources */,
 				46E861A025BC73EA00BF855B /* HTTPService.swift in Sources */,
 				46EABE5D25BD01870081D36B /* MovieDetailService.swift in Sources */,
 				46E861CC25BCF46B00BF855B /* RemoteImageView.swift in Sources */,
