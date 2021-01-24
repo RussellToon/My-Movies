@@ -25,7 +25,6 @@ class ImageLoader: ObservableObject {
                 self.image = image
             case .failure(let error):
                 print("Failed to get image \(path) with error: \(error)")
-                // self.image = failed placeholder
             }
         }
     }
@@ -36,8 +35,6 @@ typealias ImageServiceCompletion = (Result<UIImage, ImageService.Failure>) -> Vo
 
 
 struct ImageService {
-
-    // Example: https://image.tmdb.org/t/p/w92/nTmYMM7divfQx6CrGUEnU0EbLEZ.jpg
 
     let endpointString = "https://image.tmdb.org/t/p"
 
@@ -68,7 +65,6 @@ struct ImageService {
     }
 
     private func urlForImage(imageSize: ImageSize, path: String) -> URL? {
-        //guard let path = path else { return nil }
         let urlString = endpointString + "/" + imageSize.rawValue + path
         return URL(string: urlString)
     }

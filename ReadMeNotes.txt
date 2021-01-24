@@ -18,5 +18,8 @@ Would have made explicit view models and translated API result objects into app 
 
 Would obviously add more details to the detail view.
 
+Ideally more tests would increase coverage.
+
+Implementing an image cache may improve performance, though it doesn't seem poor currently.
 
 
