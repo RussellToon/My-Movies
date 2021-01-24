@@ -20,11 +20,7 @@ struct RecentReleasesResponse: Codable, Equatable {
 struct RecentReleasesService {
 
     let apiKey: String
-
     var urlSession = URLSession.shared
-
-    // Example: https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2020-12-23&primary_release_date.lte=2021-01-23&vote_count.gte=5&sort_by=vote_average.desc&page=1&api_key=xxx
-
     private let service = HTTPService<RecentReleasesResponse>(endpointString: "https://api.themoviedb.org/3/discover/movie")
 
     func fetch(page: Int = 1, completion: @escaping RecentResponseCompletion) {
@@ -36,23 +32,6 @@ struct RecentReleasesService {
 
         let urlSessionTask = urlSession.dataTask(with: request) { data, response, error in
 
-//            guard let httpResponse = response as? HTTPURLResponse else {
-//                DispatchQueue.main.async {
-//                    completion(.failure(.notHttpResponse(data: data)))
-//                }
-//                return
-//            }
-//            guard
-//                let responseData = data, error == nil, 200 ... 299 ~= httpResponse.statusCode
-//            else {
-//                DispatchQueue.main.async {
-//                    let errorResponse = String(decoding: data ?? Data(), as: UTF8.self)
-//                    completion(.failure(.httpError(status: httpResponse.statusCode, errorResponse: errorResponse)))
-//                }
-//                return
-//            }
-
-            ///
             guard let (statusCode, responseData) = service.handleErrorResponse(data: data, response: response, error: error, completion: completion) else {
                 return
             }
@@ -77,7 +56,7 @@ struct RecentReleasesService {
             return nil
         }
         let dateFormatter = ISO8601DateFormatter()
-        dateFormatter.formatOptions = [.withYear, .withMonth, .withDay]
+        dateFormatter.formatOptions = [.withYear, .withMonth, .withDay, .withDashSeparatorInDate]
 
         let toDateString = dateFormatter.string(from: toDate)
         let toDateParameter = URLQueryItem(name: "primary_release_date.lte", value: toDateString)
@@ -90,10 +69,17 @@ struct RecentReleasesService {
             parameters.append(fromDateParameter)
         }
 
+        let minVoteCountParameter = URLQueryItem(name: "vote_count.gte", value: "5")
+        parameters.append(minVoteCountParameter)
+
+        //let sortParameter = URLQueryItem(name: "sort_by", value: "vote_average.desc")
+        let sortParameter = URLQueryItem(name: "sort_by", value: "popularity.desc")
+        parameters.append(sortParameter)
+
         let apiKeyParameter = URLQueryItem(name: "api_key", value: apiKey)
         parameters.append(apiKeyParameter)
 
-        return service.getRequestWithStandardHeaders(url: url, parameters: [apiKeyParameter])
+        return service.getRequestWithStandardHeaders(url: url, parameters: parameters)
     }
 
 }

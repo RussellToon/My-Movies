@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		463EC8CD25BDCB4E00C18F94 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463EC8CC25BDCB4E00C18F94 /* Secrets.swift */; };
 		463EC8D525BDCD9B00C18F94 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 463EC8D425BDCD9B00C18F94 /* Secrets.plist */; };
+		463EC8DA25BDEF2500C18F94 /* RecentReleasesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463EC8D925BDEF2500C18F94 /* RecentReleasesServiceTests.swift */; };
+		463EC8E225BDEF6600C18F94 /* MovieDetailServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463EC8E125BDEF6600C18F94 /* MovieDetailServiceTests.swift */; };
 		46E8615225BC4EB500BF855B /* My_MoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8615125BC4EB500BF855B /* My_MoviesApp.swift */; };
 		46E8615425BC4EB500BF855B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8615325BC4EB500BF855B /* ContentView.swift */; };
 		46E8615625BC4EB600BF855B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E8615525BC4EB600BF855B /* Assets.xcassets */; };
 		46E8615925BC4EB600BF855B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E8615825BC4EB600BF855B /* Preview Assets.xcassets */; };
-		46E8616425BC4EB600BF855B /* My_MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8616325BC4EB600BF855B /* My_MoviesTests.swift */; };
 		46E8616F25BC4EB600BF855B /* My_MoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8616E25BC4EB600BF855B /* My_MoviesUITests.swift */; };
 		46E8618125BC4F9900BF855B /* MoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8618025BC4F9900BF855B /* MoviesListView.swift */; };
 		46E8618C25BC67EF00BF855B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8618B25BC67EF00BF855B /* AppState.swift */; };
@@ -50,6 +51,8 @@
 /* Begin PBXFileReference section */
 		463EC8CC25BDCB4E00C18F94 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		463EC8D425BDCD9B00C18F94 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		463EC8D925BDEF2500C18F94 /* RecentReleasesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentReleasesServiceTests.swift; sourceTree = "<group>"; };
+		463EC8E125BDEF6600C18F94 /* MovieDetailServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailServiceTests.swift; sourceTree = "<group>"; };
 		46E8614E25BC4EB500BF855B /* My Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E8615125BC4EB500BF855B /* My_MoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_MoviesApp.swift; sourceTree = "<group>"; };
 		46E8615325BC4EB500BF855B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		46E8615825BC4EB600BF855B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46E8615A25BC4EB600BF855B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E8615F25BC4EB600BF855B /* My MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My MoviesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46E8616325BC4EB600BF855B /* My_MoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_MoviesTests.swift; sourceTree = "<group>"; };
 		46E8616525BC4EB600BF855B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E8616A25BC4EB600BF855B /* My MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My MoviesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E8616E25BC4EB600BF855B /* My_MoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_MoviesUITests.swift; sourceTree = "<group>"; };
@@ -161,8 +163,9 @@
 		46E8616225BC4EB600BF855B /* My MoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				463EC8D925BDEF2500C18F94 /* RecentReleasesServiceTests.swift */,
+				463EC8E125BDEF6600C18F94 /* MovieDetailServiceTests.swift */,
 				46E861A725BC766D00BF855B /* Stubs */,
-				46E8616325BC4EB600BF855B /* My_MoviesTests.swift */,
 				46E8616525BC4EB600BF855B /* Info.plist */,
 			);
 			path = "My MoviesTests";
@@ -375,8 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E8616425BC4EB600BF855B /* My_MoviesTests.swift in Sources */,
+				463EC8DA25BDEF2500C18F94 /* RecentReleasesServiceTests.swift in Sources */,
 				46E861A925BC769400BF855B /* StubURLProtocol.swift in Sources */,
+				463EC8E225BDEF6600C18F94 /* MovieDetailServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

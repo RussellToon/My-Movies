@@ -17,8 +17,6 @@ struct MovieDetailService {
 
     var urlSession = URLSession.shared
 
-    // Example:
-
     private let service = HTTPService<MovieDetail>(endpointString: "https://api.themoviedb.org/3/movie")
 
     func fetch(movieId: Int, completion: @escaping MovieDetailCompletion) {
@@ -29,22 +27,6 @@ struct MovieDetailService {
         }
 
         let urlSessionTask = urlSession.dataTask(with: request) { data, response, error in
-
-//            guard let httpResponse = response as? HTTPURLResponse else {
-//                DispatchQueue.main.async {
-//                    completion(.failure(.notHttpResponse(data: data)))
-//                }
-//                return
-//            }
-//            guard
-//                let responseData = data, error == nil, 200 ... 299 ~= httpResponse.statusCode
-//            else {
-//                DispatchQueue.main.async {
-//                    let errorResponse = String(decoding: data ?? Data(), as: UTF8.self)
-//                    completion(.failure(.httpError(status: httpResponse.statusCode, errorResponse: errorResponse)))
-//                }
-//                return
-//            }
 
             guard let (statusCode, responseData) = service.handleErrorResponse(data: data, response: response, error: error, completion: completion) else {
                 return

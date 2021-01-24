@@ -20,19 +20,6 @@ struct HTTPService <CompletionSuccess> {
         return URL(string: urlStringWithPath)
     }
 
-    //  func postRequestWithStandardHeaders(url: URL, parameterString: String) -> URLRequest {
-    //
-    //    let parameterData = Data(parameterString.utf8)
-    //
-    //    var request = URLRequest(url: url)
-    //    request.httpMethod = "POST"
-    //    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    //    request.setValue(NSLocalizedString("lang", comment: ""), forHTTPHeaderField: "Accept-Language")
-    //    request.httpBody = parameterData
-    //
-    //    return request
-    //  }
-
     func getRequestWithStandardHeaders(url: URL, parameters: [URLQueryItem] = []) -> URLRequest {
         var request = URLRequest(url: addQueryItems(url: url, newQueryItems: parameters))
         request.httpMethod = "GET"

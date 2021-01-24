@@ -13,8 +13,8 @@ struct My_MoviesApp: App {
     let appContext: AppContext
 
     init() {
-        let appState = AppState.populatedWithSampleData()
-        let apiKey = Secrets().get(named: "apiKey")
+        let appState = AppState()
+        let apiKey = Secrets().get(named: "apiKey", checkNotPlaceholder: "Your_API_Key_Here")
         let appContext = AppContext(apiKey: apiKey, appState: appState)
 
         self.appContext = appContext

@@ -20,7 +20,6 @@ struct MoviesListView: View {
                     }
             ) {
                 MoviesListRow(movie: movie)
-                    //.frame(minHeight: 100, idealHeight: 100, maxHeight: 120)
                     .frame(height: 100)
             }
         }
@@ -47,10 +46,7 @@ struct MoviesListRow: View {
                 }
             }
             Spacer()
-            if let posterPath = movie.poster_path {
-                RemoteImageView(imagePath: posterPath, size: .small)
-            }
-            //.frame(height: 80)
+            RemoteImageView(imagePath: movie.poster_path ?? "", size: .small)
         }
     }
 }
@@ -59,5 +55,6 @@ struct MoviesListRow: View {
 struct MoviesListView_Previews: PreviewProvider {
     static var previews: some View {
         MoviesListView()
+            .environmentObject(AppContext(apiKey: "XXX", appState: AppState(movies: Movie.sampleData(), movieDetail: nil)))
     }
 }

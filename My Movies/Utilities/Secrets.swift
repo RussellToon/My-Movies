@@ -10,11 +10,12 @@ import Foundation
 
 struct Secrets {
 
-    func get(named secretName: String) -> String {
+    func get(named secretName: String, checkNotPlaceholder: String? = nil) -> String {
 
         if let path = Bundle.main.path(forResource: "Secrets", ofType: "plist") {
             let dictionary = NSDictionary(contentsOfFile: path)
-            guard let secret = dictionary?.value(forKey: secretName) as? String else {
+            guard let secret = dictionary?.value(forKey: secretName) as? String,
+                  secret != checkNotPlaceholder else {
                 assertionFailure("Secret named \(secretName) not found in Secrets.plist")
                 return "Error: secret \(secretName) not found"
             }
