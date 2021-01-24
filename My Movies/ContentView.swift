@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+
+    @EnvironmentObject var appContext: AppContext
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            MoviesListView()
+        }
     }
 }
 
